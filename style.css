@@ -90,6 +90,13 @@ code {
     padding: 0.2rem 0.5rem;
     border-radius: 3px;
 }
+footer{
+    text-align: center;
+    background-color: #222c36;
+    color: white;
+    border-radius: 5%;
+    font-size: 10px;
+}
 
 
 /* Media Query para tabletas (min 650px y max 960px) */
