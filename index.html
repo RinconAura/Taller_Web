@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación sobre TypeScript, Angular e Ionic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+        <header>
+            <h1>Documentación sobre TypeScript, Angular e Ionic</h1>
+        </header>
+        <nav class="menuFoot">
+            <button class="menuFoot_option btn">
+                <img class="btn_icon" src="res/icons8-menú-96.png" alt="">
+                <label class="btn_text" for="">Menu</label>
+            </button>
+            <button class="menuFoot_option btn">
+                <img class="btn_icon" src="res/icons8-mecanografiado-96.png" alt="">
+                <label class="btn_text" for="">TypeScript</label>
+            </button>
+            <button class="menuFoot_option btn">
+                <img class="btn_icon" src="res/icons8-angular-50.png" alt="">
+                <label class="btn_text" for="">Angular</label>
+            </button>
+            <button class="menuFoot_option btn">
+                <img class="btn_icon" src="res/icons8-iónico-96.png" alt="">
+                <label class="btn_text" for="">Ionic</label>
+            </button>
+        </nav>
+    
+        <main>
+            <section id="typescript">
+                <h2>TypeScript</h2>
+                <p><strong>¿Qué es?</strong></p>
+                <p>TypeScript es un superconjunto de JavaScript que añade tipado estático opcional y funciones avanzadas a JavaScript,
+                   que permite a los desarrolladores especificar los tipos de variables, parámetros de función y valores de retorno, 
+                   detectando errores relacionados con el tipo durante el desarrollo.
+                </p>
+                <p><strong>Sintaxis</strong></p>
+                <ul>
+                    <li><strong>Declaración de variables:</strong></li>
+                    <P>Una variable es un contenedor que almacena un valor, y ese valor puede cambiar durante la ejecución del programa.
+                     Las variables se utilizan para guardar datos temporales que pueden ser referenciados y manipulados. <br>
+                    <br>
+                        Hay tres formas principales de declarar variables: <br>
+                          
+                        1. var: Tiene un alcance a nivel de función y puede ser redeclarada. <br>
+                        2. let: Permite declarar variables con un ámbito limitado a un bloque de código (bloque de función, bloque if, etc.). <br>
+                        3. const: Declara variables cuyo valor no puede cambiar una vez asignado, aunque en el caso de objetos y arrays, se pueden modificar sus propiedades o elementos internos.</P>
+
+                        </ul>
+                    <code>let nombre: string = "Juan"; <br>
+                          const PI: number = 3.1416; <br>        
+                    </code>
+                    <br><br>
+                    <li><strong>Definición de funciones:</strong></li>
+                    <p> Una función es un bloque de código que se agrupa para realizar una tarea específica y se puede reutilizar cuando se necesite. Las funciones permiten evitar la repetición de código, hacen que el código sea más legible y estructurado, y permiten la modularidad.</p>
+                    <code>function suma(a: number, b: number): number { return a + b; }</code>
+                    <br><br>
+                    <li><strong>Interfaces:</strong> </li>
+                    <p>En TypeScript, una interfaz define la estructura de un objeto, especificando los tipos de las propiedades y métodos que debe tener.</p>
+                    <code>interface Persona {<br>
+                        nombre: string;<br>
+                        edad: number; <br>
+                        saludar(): void; <br>
+                    }</code>
+                    <br><br>
+                    <li><strong>Types:</strong> </li>
+                    <p>Los types en TypeScript son similares a las interfaces, pero más flexibles. Mientras que una interfaz solo puede definir la estructura de objetos, un type puede representar no solo objetos, sino también tipos primitivos, uniones, intersecciones, funciones, tuplas, etc..<br>
+                        Los types pueden unirse usando & (intersección) y | (unión), lo que no es posible con interfaces.</p> <br>
+                    <code>type Punto = { x: number; y: number; } <br>
+                           type ID = number | string;</code>
+                </ul>
+                    <br><br>
+                <p><strong>Variables y tipos </strong></p>
+                <ul>
+                    <li><strong>Tipos</strong></li>
+                    <ul>
+                        <li><strong>Primitivos principales</strong> </li>
+                            
+                                <li>1. boolean : valores verdaderos o falsos <br>
+                                    <code>let esEstudiante: boolean = true;</code><br>
+                                <li>2. number : números enteros y valores de punto flotante <br>
+                                    <code>let edad: number = 10;</code> <br>
+                                <li>3. string : valores de texto como "TypeScript Rocks" <br>
+                                    <code>let nombre: string = "Pepito";</code>
+                            <br><br>
+                        <li><strong>Primitivos menos comunes</strong></li>
+                        
+                            <li>1. bigint : números enteros y valores de punto flotante, pero permite números negativos y positivos más grandes que el numbertipo.</li>
+                            <li>2. symbolSe :utilizan para crear un identificador único global.</li>
+                        <br>
+                        <li><strong>Tipos especiales</strong></li>
+                        
+                            <li>1. any : es un tipo que deshabilita la verificación de tipos y permite efectivamente que se utilicen todos los tipos. <br>
+                                <code> let v: any = true;
+                                    v = "string"; 
+                                    Math.round(v);</code>  <br>
+                            <li>2. unknown :unknownes una alternativa similar, pero más segura, a any. </li> <br>
+                            <li>3. never :efectivamente lanza un error cada vez que se define. <br>
+                                <code>let x: never = true; // Error: Type 'boolean' is not assignable to type 'never'.</code>
+                            <li>4. undefined & null :son tipos que hacen referencia a los primitivos de JavaScript undefinedy null respectivamente. <br>
+                                <code>let y: undefined = undefined;
+                                    let z: null = null;</code>                      
+            
+                    </ul>
+                </ul>
+                <br><br>
+                <p><strong>Clases</strong></p>
+                    <ul>
+                        <li><strong>Propiedades y Métodos:</strong> <br> se tipifican mediante anotaciones de tipo, similares a las variables. <br>
+                            <code>class Person {<br>
+                                name: string;<br>
+                              } <br>
+                              
+                              const person = new Person();<br>
+                              person.name = "Jane";</code>
+                          <br><br>
+                          <li><strong>Visibilidad :</strong> <br>Hay tres modificadores de visibilidad principales en TypeScript.</li>
+                          
+                            <li>1. public : (predeterminado) permite el acceso al miembro de la clase desde cualquier lugar</li>
+                            <li>2. private : solo permite el acceso al miembro de la clase desde dentro de la clase</li>
+                            <li>3. protected : permite el acceso al miembro de la clase desde sí mismo y desde cualquier clase que lo herede, lo cual se cubre en la sección de herencia a continuación </li><br>
+                              <code> class Person { <br>
+                                private name: string;<br>
+                              
+                                public constructor(name: string) {<br>
+                                  this.name = name;<br>
+                                }br
+                              
+                                public getName(): string {<br>
+                                  return this.name;<br>
+                                } <br>
+                                } <br>
+                              
+                                const person = new Person("Jane");<br>
+                                console.log(person.getName()); // person.name isn't accessible from outside the class since it's private</code>
+                
+                    </ul><br>
+                    <p><strong>Ciclos y condicionales</strong></p>
+                        <ul>
+                            <li><strong>1. Condicionales:</strong> </li>
+                            <p>Los condicionales permiten que un programa tome decisiones ejecutando diferentes bloques de código en función de si una condición es verdadera o falsa. En la mayoría de los lenguajes de programación, los condicionales se implementan utilizando las declaraciones if, else if, y else.</p> 
+                            <code>if (x > 10) { console.log("Mayor que 10"); }</code><br>
+                            <li><strong>2. Bucle for:</strong> </li>
+                            <p>Se utiliza para repetir un bloque de código un número específico de veces. </p>
+                            <code>for (let i = 0; i < 5; i++) { console.log(i); }</code><br>
+                            <li><strong>Bucle while:</strong></li>
+                            <p>Un bucle while repite un bloque de código mientras una condición específica sea verdadera. </p>
+                            <code>while (x < 10) { x++; }</code><br>
+                        </ul>
+                            <br>
+                        <p><strong>Arrays y Listas</strong></p>
+                        <ul>
+                            <li><strong>Declaración de Arrays:</strong> </li>
+                            <p>Un array es una estructura de datos que permite almacenar múltiples valores en una sola variable, organizados en una secuencia indexada. La declaración de un array define la capacidad de almacenar y acceder a varios elementos utilizando índices.</p>
+                            <code>let numeros: number[] = [1, 2, 3, 4, 5];</code><br>
+                            <li><strong>Uso de métodos:</strong> 
+                                <p> Los métodos son funciones que están asociadas a un objeto o clase. Se utilizan para realizar operaciones o manipular los datos de ese objeto. Los métodos se llaman utilizando el nombre del objeto seguido del nombre del método y, en caso necesario, se pueden pasar argumentos entre paréntesis.</p>
+                                <code>numeros.push(6);</code> <br>
+                                <code>numeros.map(num => num * 2);</code><br>
+                            </li>
+                        </ul> 
+            </section>
+    
+            <br>
+            <section id="angular">
+                <h2>Angular</h2>
+                <p><strong>¿Qué es?</strong></p>
+                <p>Angular es un framework de desarrollo web creado por Google para construir aplicaciones web dinámicas de una sola página (Single Page Applications, SPA). Angular utiliza TypeScript como su lenguaje principal y ofrece herramientas y estructuras para crear aplicaciones robustas y mantenibles.</p>
+                <br>
+                <p><strong>Configuración</strong></p>
+                <ul>
+                    <li><strong>Instalación de Angular CLI:</strong> <code>npm install -g @angular/cli</code></li>
+                    <li><strong>Creación de un nuevo proyecto:</strong> <code>ng new mi-proyecto</code></li>
+                    <li><strong>Iniciar el servidor de desarrollo:</strong> <code>ng serve</code></li>
+                </ul>
+                <br>
+                <p><strong>Características principales:</strong></p>
+                <ul>
+                    <li><strong>1. Componentes:</strong> Angular se basa en una arquitectura de componentes, que facilita la reutilización y el mantenimiento del código.</li>
+                    <li><strong>2. Inyección de dependencias:</strong> Facilita la gestión de dependencias entre los distintos componentes y servicios de la aplicación.</li>
+                    <li><strong>3. Routing:</strong> Angular tiene un sistema de enrutamiento robusto para manejar la navegación entre diferentes vistas en una SPA.</li>
+                    <li><strong>4. Directivas y Pipes:</strong> Permiten manipular el DOM y transformar datos en las plantillas de forma declarativa.</li>
+                </ul>
+            </section>
+
+            
+            <section id="ionic">
+                <h2>Ionic</h2>
+                <p><strong>¿Qué es?</strong></p>
+                <p>Ionic es un framework open-source utilizado para desarrollar aplicaciones móviles híbridas, es decir, aplicaciones que pueden ejecutarse en iOS, Android y web desde un solo código base. Ionic está construido sobre Angular (aunque también soporta React y Vue) y utiliza tecnologías web estándar como HTML, CSS y JavaScript.</p>
+                <br>
+                <p><strong>Configuración</strong></p>
+                <ul>
+                    <li><strong>Instalación de Ionic CLI:</strong> <code>npm install -g @ionic/cli</code></li>
+                    <li><strong>Creación de un nuevo proyecto:</strong> <code>ionic start mi-proyecto blank</code></li>
+                    <li><strong>Iniciar la aplicación:</strong> <code>ionic serve</code></li>
+                </ul>
+                <br>
+                <p><strong>Características principales:</strong></p>
+                <ul>
+                    <li><strong>UI Components:</strong> Proporciona una amplia gama de componentes de interfaz de usuario optimizados para dispositivos móviles.</li>
+                    <li><strong>Cross-platform:</strong> Permite crear aplicaciones que funcionan en múltiples plataformas sin necesidad de escribir código específico para cada una.</li>
+                    <li><strong>Integración con Cordova/Capacitor:</strong> Permite acceder a las funcionalidades nativas del dispositivo como la cámara, GPS, etc.</li>
+                    <li><strong>Theming:</strong> Soporte para personalización de temas, adaptándose a la apariencia de cada plataforma (iOS, Android).</li>
+                </ul>
+            </section>
+            <footer>
+
+            </footer>
+        </main>
+    </body>
+</html>

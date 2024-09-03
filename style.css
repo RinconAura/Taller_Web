@@ -1,0 +1,166 @@
+:root {
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 2.0;
+}
+
+header {
+    background-color:#2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 12px;
+}
+h2{
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.menuFoot{/*Display flex para que se agreguen horizontalmente*/
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;/*Horizontal*/
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:  #f2f6f4;
+    border-top: 0px solid rgba(0, 0, 0, 0.5);
+     /*para que quede en la parte de abajo*/
+     position: fixed; /*los sobrepone a todos los demas elementos*/
+     left: 0px;
+     bottom: 0px;
+}
+
+.menuFoot_option{/*cada boton un espacio en especifico*/
+    width: 25%;/*distribuir en 25% el ancho*/
+    height: 5rem;
+}
+
+.btn{/*flex - para que quede en columna primero el icono despues el nombre*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btn_icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color:  #c0c0c0;
+}
+
+
+main {
+    padding: 1rem;
+}
+
+
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+code {
+    background-color: #f4f4f4;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+}
+
+
+/* Media Query para tabletas (min 650px y max 960px) */
+@media (min-width: 650px) and (max-width: 960px) {
+    
+    body {
+        padding: 20px;
+        margin: 0;
+    }
+    
+    header {
+        font-size: 14px;
+        padding: 15px 0;
+        margin-bottom: 20px;
+    }
+    .menuFoot{
+        padding: 20px;
+        margin: 0; 
+    }
+    .btn_icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 1px;
+    }
+    
+}
+
+
+
+/* Media Query para computadoras (min 960px) */
+@media (min-width: 960px) {
+   
+    header {
+        font-size: 16px;
+        position: fixed; 
+        top: 0; 
+        width: 100%; 
+        z-index: 1000; /* Asegurar que el header esté por encima de otros elementos */
+    }
+
+    main {
+        margin-left: 10vw;
+        margin-top: 10rem; /* Ajusta este valor a la altura del header */
+    }
+    nav.menuFoot {
+        display: flex;
+        flex-direction: column
+    }
+    
+    .menuFoot {
+        background-color:  transparent;
+        border: none;
+        width: 10vw;
+        height: 100vh;
+        top: 32px; /* Justo debajo del header */
+        flex-direction: column;
+       
+    }
+    
+    .menuFoot_option{/*cada boton un espacio en especifico*/
+        width: 10vw;/*distribuir en 25% el ancho*/
+        height: 7rem;
+        background-color:transparent;
+    }
+    .btn_icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1px;
+    }
+    .menuFoot_option{/*cada boton un espacio en especifico*/
+        width: 25%;/*distribuir el ancho*/
+        height: 1px;
+    }
+}
